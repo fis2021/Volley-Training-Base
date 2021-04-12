@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<GridPane fx:id="mainGrid" alignment="CENTER" vgap="10" hgap="10" fx:controller="org.example.ControllerRegister"
+          stylesheets="@../../org.styling/styleVolleyRegister.css" xmlns:fx="http://javafx.com/fxml">
+    <Label id="title" text="REGISTER" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <Label id="fieldDescription" text="First Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Label id="fieldDescription" text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <TextField fx:id="firstname" promptText="First Name" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="lastname" promptText="Last Name" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label id="fieldDescription" text="Email Address:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <Label id="fieldDescription" text="Phone Number:" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <TextField fx:id="email" promptText="Email Address" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="phone" promptText="Phone Number" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Label id="fieldDescription" text="CNP:" GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <TextField fx:id="cnp" promptText="CNP" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <Label id="fieldDescription" text="Account Type" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="accountType" GridPane.rowIndex="10" GridPane.columnIndex="0" GridPane.columnSpan="2">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="PLAYER"/>
+                <String fx:value="COACH"/>
+                <String fx:value="PARENT"/>
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="PLAYER"/>
+        </value>
+    </ComboBox>
+    <Label id="fieldDescription" text="Age:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+    <Label id="fieldDescription" text="Years of experience:" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+    <TextField fx:id="age" promptText="Age" GridPane.rowIndex="12" GridPane.columnIndex="0"/>
+    <TextField fx:id="yearsOfExperience" promptText="Years of Experience" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+    <Label id="fieldDescription" text="CNP of child:" visible="false"
+           GridPane.rowIndex="11" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <TextField fx:id="cnpChild" promptText="CNP of child" visible="false"
+               GridPane.rowIndex="12" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <Button fx:id="register" text="REGISTER" GridPane.rowIndex="13" GridPane.columnIndex="0"/>
+    <Button fx:id="back" text="BACK" GridPane.rowIndex="13" GridPane.columnIndex="1"/>
+</GridPane>
+
