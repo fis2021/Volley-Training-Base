@@ -16,18 +16,6 @@
    <TextField fx:id="username" promptText="Username" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
    <Label id="fieldDescription" text="Password:" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
    <PasswordField fx:id="password" promptText="Password" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
-   <ComboBox fx:id="accountType" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2">
-      <items>
-         <FXCollections fx:factory="observableArrayList">
-            <String fx:value="PLAYER"/>
-            <String fx:value="COACH"/>
-            <String fx:value="PARENT"/>
-         </FXCollections>
-      </items>
-      <value>
-         <String fx:value="PLAYER"/>
-      </value>
-   </ComboBox>
    <Button fx:id="login" text="LOGIN" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-   <Button fx:id="register" text="REGISTER" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+   <Button fx:id="register" onAction="#handleRegister" text="REGISTER" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
 </GridPane>
