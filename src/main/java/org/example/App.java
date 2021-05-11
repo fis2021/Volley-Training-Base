@@ -4,9 +4,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -20,10 +26,21 @@ public class App extends Application {
         scene = new Scene(loadFXML("volleyLogin"), 1200, 800);
         stage.setScene(scene);
         stage.show();
+
+        Database.init();
+    }
+
+    @Override
+    public void stop() {
+        Database.terminate();
     }
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    public static void changeScene(Button source, String fxml_file) throws IOException {
+        ((Stage) source.getScene().getWindow()).setScene(new Scene(loadFXML(fxml_file), 1280, 720));
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
