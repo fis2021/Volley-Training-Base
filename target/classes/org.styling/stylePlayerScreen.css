@@ -1,0 +1,30 @@
+#mainGrid {
+    -fx-background-color: linear-gradient(to bottom right, rgb(252, 15, 192), rgb(11, 84, 254));
+}
+
+#profileGrid, #playerGrid {
+    -fx-background-color: WHITE;
+    -fx-border-width: 2px;
+    -fx-border-color: rgb(48,48,48);
+    -fx-pref-width: 400px;
+}
+
+#playerDetails {
+    -fx-font-size: 18;
+    -fx-font-weight: BOLD;
+    -fx-pref-width: 150px;
+}
+
+#logout {
+    -fx-pref-width: 400px;
+    -fx-pref-height: 60px;
+    -fx-font-size: 24;
+    -fx-font-weight: BOLD;
+    -fx-background-radius: 5px;
+    -fx-background-color: RED;
+    -fx-text-fill: WHITE;
+}
+
+#logout:hover {
+    -fx-background-color: rgb(139, 0, 0);
+}
