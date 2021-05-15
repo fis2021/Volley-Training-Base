@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class ControllerRegister {
 
@@ -49,17 +50,27 @@ public class ControllerRegister {
                 break;
             case "COACH":
                 user = new UserModel(firstname.getText(), lastname.getText(), email.getText(), phone.getText(),
-                        cnp.getText(), "PLAYER", "X", -1, -1, username.getText(),
+                        cnp.getText(), "COACH", "X", -1, -1, username.getText(),
                         Database.encodePasswordMD5(password.getText()));
                 break;
             case "PARENT":
+                if(Database.getPlayerData(cnpChild.getText()) == null) {
+                    new Alert(Alert.AlertType.ERROR, "Child is not registered").showAndWait();
+                    return;
+                }
                 user = new UserModel(firstname.getText(), lastname.getText(), email.getText(), phone.getText(),
-                        cnp.getText(), "PLAYER", cnpChild.getText(), -1, -1, username.getText(),
+                        cnp.getText(), "PARENT", cnpChild.getText(), -1, -1, username.getText(),
                         Database.encodePasswordMD5(password.getText()));
                 break;
         }
         if(user != null) {
             Database.uploadUser(user);
+            if(user.getAccType().equals("PLAYER"))
+                Database.uploadPlayerData(new PlayerData(user.getCnp(), "NONE", 0, 0));
+            else if(user.getAccType().equals("PARENT"))
+                Database.uploadParentData(new ParentData(user.getCnp(),
+                        Objects.requireNonNull(Database.getPlayerData(cnpChild.getText())).getAbsents(),
+                        Objects.requireNonNull(Database.getPlayerData(cnpChild.getText())).getProgress()));
 
             firstname.setText("");
             lastname.setText("");
