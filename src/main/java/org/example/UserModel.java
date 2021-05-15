@@ -19,6 +19,7 @@ public class UserModel {
         this.password = password;
     }
 
+
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof UserModel) {
@@ -36,6 +37,8 @@ public class UserModel {
     public String getFname() { return fname; }
 
     public String getLname() { return lname; }
+
+    public String getFullName() { return fname + " " + lname; }
 
     public String getEmail() { return email; }
 

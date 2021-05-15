@@ -40,6 +40,7 @@
             </columns>
         </TableView>
     </GridPane>
+
     <GridPane id="playerGrid" GridPane.rowIndex="2" GridPane.columnIndex="0" hgap="10" vgap="10">
         <padding>
             <Insets bottom="10" top="10" left="25" right="25"/>
