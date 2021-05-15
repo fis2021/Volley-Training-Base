@@ -43,7 +43,6 @@ public class ControllerCoach {
         setTable();
     }
 
-
     public void setTable() {
         namePlayer.setCellValueFactory(new PropertyValueFactory<>("FullName"));
         cnpPlayer.setCellValueFactory(new PropertyValueFactory<>("Cnp"));
